@@ -219,7 +219,7 @@
 						
 						<?php 
                          $items = getAll($conn, 'items');
-                         foreach($items as $item_key => $item){ 
+                         foreach($items as $item_key => $item){
                         ?>
 						
 						<div class="col-sm-4">
