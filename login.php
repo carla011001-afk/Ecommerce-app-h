@@ -52,22 +52,14 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/LOGO1.jpg" alt="" /></a>
+							<a href="index.php"><img src="images/LOGO1.jpg" alt="" /></a>
 						</div>
-		<div class="pull-right clearfix">
-					
-				</div>		
+		<div class="pull-right clearfix"></div>		
 					</div>
-					<br>
 						
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
-							</ul>
+								<?php include_once 'includes/nav.php';?>
 						</div>
 					</div>
 				</div>
@@ -106,7 +98,7 @@
 	<section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 col-sm-offset-1">
+				<div class="col-sm-5">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
 						<form action="#">
@@ -120,17 +112,22 @@
 						</form>
 					</div><!--/login form-->
 				</div>
-				<div class="col-sm-1">
-					<h2 class="or">OR</h2>
+				<div class="col-sm-2 text-center">
+					<h2 class="or text-center">OR</h2>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-5">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="#">
-							<input type="text" placeholder="Name"/>
-							<input type="password" placeholder="Password"/>
-							<input type="usertype" placeholder="Usertype"/>
-							<button type="submit" class="btn btn-default">Signup</button>
+						<form action="" method="post" >
+							<input name="username" autocomplete="off" required type="text" placeholder="Username"/>
+							<input name="password" type="password" placeholder="Password"/>
+							<input name="repeat_password" type="password" placeholder="Repeat Password"/>
+							<hr>
+							<input name="firstname" autocomplete="off" required type="text" placeholder="Firstname"/>
+							<input name="lastname" autocomplete="off" required type="text" placeholder="Lastname"/>
+							<input name="address" required type="text" placeholder="Address"/>
+							
+							<button type="submit" name="signup" class="btn btn-default">Signup</button>
 						</form>
 					</div><!--/sign up form-->
 				</div>
