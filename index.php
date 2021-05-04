@@ -220,6 +220,7 @@
 						<?php 
                          $items = getAll($conn, 'items');
                          foreach($items as $item_key => $item){
+                             //this is to check for changes
                         ?>
 						
 						<div class="col-sm-4">
