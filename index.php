@@ -31,8 +31,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +639 9999 999</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> lgaclothing@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +639 0637 791 84</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> lawrencegraphicart.lga@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -58,15 +58,19 @@
 						
 				</div>		
 				
-						
+				<br><br><br><br><br><br><br>
+
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
-							<?php include_once 'includes/nav.php';?>
+							<ul class="nav navbar-nav">
+								<li><a href="login.php"><button type="button" class="btn btn-default get">Login</button></li></a>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	
 	
 		<div class="header-bottom">
 			<div class="container">
@@ -82,17 +86,16 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
+								<li><a href="index.php" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                     	<li><a href="">LGA Shirts</a></li>
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li>			 
+											 
                                     </ul>
                                 </li> 
 								
-								<li><a href="contact-us.html">Contact</a></li>
-								<li><a href="contact-us.html">About Us</a></li>
+								<li><a href="contact-us.php">Contact</a></li>
+								<li><a href="contact-us.php">About Us</a></li>
 							</ul>
 						</div>
 					</div>
@@ -100,6 +103,7 @@
 			</div>
 		</div>
 	</header>
+
 
 	<section id="slider"><!--slider-->
 		<div class="container">
@@ -170,6 +174,9 @@
 				</div>
 			</div>
 		</div>
+
+		<br><br>	<br><br>
+
 		<section>
 		<div class="container mt-5">
 			<div class="row">
@@ -223,6 +230,7 @@
 											
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
+
 										<div class="product-overlay">
 											<div class="overlay-content">
 												<h2><?php echo "Php ". number_format($item['item_price'],2);?></h2>
@@ -230,8 +238,7 @@
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 										</div>
-								</div>
-								
+								</div>								
 							</div>
 						</div>
 						
@@ -241,7 +248,6 @@
 				</div>
 				</div>
 						
-
 	</section>
 
 
@@ -251,16 +257,75 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-
-							<h2><span>LGA E</span>-CLOTHING</h2>
-							<img src="images/logo.jpeg" alt="" />
-							<p></p>
+							<h2><span>LGA</span> CLOTHING</h2>
+							<p>WE OFFER THE BEST AND HIGH QUALITY T-SHIRTS AND VAPE!</p>
 						</div>
 					</div>
-
-</div>
-</div>
-</div>
+					
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>4506 ZONE|FELICIDAD SUBD SUCGAD, POLANGUI, ALBAY PHILIPPINES</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Online Help</a></li>
+								<li><a href="">Contact Us</a></li>
+								<li><a href="">Order Status</a></li>
+								<li><a href="">Change Location</a></li>
+								<li><a href="">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Terms of Use</a></li>
+								<li><a href="">Privecy Policy</a></li>
+								<li><a href="">Refund Policy</a></li>
+								<li><a href="">Billing System</a></li>
+								<li><a href="">Ticket System</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Company Information</a></li>
+								<li><a href="">Careers</a></li>
+								<li><a href="">Store Location</a></li>
+								<li><a href="">Affillate Program</a></li>
+								<li><a href="">Copyright</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
 	<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
@@ -272,7 +337,6 @@
 		</div>
 
 	</footer>
-	
 
 		
 
