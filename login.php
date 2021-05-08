@@ -1,3 +1,10 @@
+ <?php
+
+include_once "core/db_conn.php";
+include_once "core/functions.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +36,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +639 9999 999</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> lgaclothing@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +639 0637 791 84</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> lawrencegraphicart.lga@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -45,28 +52,8 @@
 				</div>
 			</div>
 		</div>
-		<br>
 
-		<div class="header-middle">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 clearfix">
-						<div class="logo pull-left">
-							<a href="index.php"><img src="images/LOGO1.jpg" alt="" /></a>
-						</div>
-		<div class="pull-right clearfix"></div>		
-					</div>
-						
-					<div class="col-md-8 clearfix">
-						<div class="shop-menu clearfix pull-right">
-								<?php include_once 'includes/nav.php';?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-		<div class="header-bottom">
+<div class="header-bottom">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-9">
@@ -80,35 +67,34 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                    	<li><a href="">LGA Shirts</a></li>
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li>			 
-                                    </ul>
-                                </li> 
+								<li><a href="index.php" class="active">Home</a></li>
 								
-								<li><a href="contact-us.html">Contact</a></li>
-								<li><a href="contact-us.html">About Us</a></li>
-							</ul>
 						</div>
 					</div>
 
+		
+	
 	<section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-5">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
-							<input type="text" placeholder="Name" />
+						<?php
+
+						if(isset($_GET['logged'])){
+							echo $_GETP['logged'];
+						}
+
+						?>
+						<form action="customer.php" method="POST">
+							<input type="text" placeholder="Username" />
 							<input type="password" placeholder="Password" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>
-							<a href="index.html"><button type="submit" class="btn btn-default">Login</button></a>
+							<button type="submit" class="btn btn-default">Login</button></a>
 						</form>
 					</div><!--/login form-->
 				</div>
@@ -118,22 +104,26 @@
 				<div class="col-sm-5">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="" method="post" >
-							<input name="username" autocomplete="off" required type="text" placeholder="Username"/>
+
+						<form action="#" method="POST" >
+							<input name="username" type="text" placeholder="Username"/>
 							<input name="password" type="password" placeholder="Password"/>
 							<input name="repeat_password" type="password" placeholder="Repeat Password"/>
 							<hr>
 							<input name="firstname" autocomplete="off" required type="text" placeholder="Firstname"/>
 							<input name="lastname" autocomplete="off" required type="text" placeholder="Lastname"/>
 							<input name="address" required type="text" placeholder="Address"/>
-							
+							<input name="contact" required type="text" placeholder="Contact"/>
 							<button type="submit" name="signup" class="btn btn-default">Signup</button>
+
 						</form>
+						
 					</div><!--/sign up form-->
 				</div>
 			</div>
 		</div>
 	</section><!--/form-->
+
 </header>
 
 
