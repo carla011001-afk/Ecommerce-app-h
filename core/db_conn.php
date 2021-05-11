@@ -2,7 +2,7 @@
 $servername="127.0.0.1";
 $dbusername="root";
 $dbpassword="";
-$dbname="LGA";
+$dbname="lga";
 
 $conn = mysqli_connect($servername,$dbusername,$dbpassword,$dbname);
 
