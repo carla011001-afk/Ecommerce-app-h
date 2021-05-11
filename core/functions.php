@@ -73,7 +73,7 @@ function createUser($conn, $username, $password, $usertype, $firstname, $lastnam
             return false;
             exit();
         }
-            mysqli_stmt_bind_param($stmt, "sssssss", );
+            mysqli_stmt_bind_param($stmt, "sssssss", $username, $password, $usertype, $firstname, $lastname, $address, $user_contact);
             mysqli_stmt_execute($stmt);
 
             mysqli_stmt_close($stmt);
