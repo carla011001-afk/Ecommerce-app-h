@@ -3,6 +3,12 @@
 include_once "core/db_conn.php";
 include_once "core/functions.php";
 
+if(createUser($conn, 'Shy', '1234', '3', 'Shymie', 'Relleve', 'Ligao City', '09097776565') !== false){
+	echo "User Added";
+}else{
+	echo "Failed";
+}
+
 ?>
 
 <!DOCTYPE html>
