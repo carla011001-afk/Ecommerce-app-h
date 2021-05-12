@@ -62,10 +62,10 @@ function getItem($conn, $table, $column, $value){
     
 } 
 
-function createUser($conn, $username, $password, $usertype, $firstname, $lastname, $address, $user_contact){
+function createUser($conn, $username, $password, $firstname, $lastname, $address, $user_contact){
 
         $err;
-        $sql ="INSERT INTO 'users' ('username', 'password', 'usertype', 'firstname', 'lastname', 'address', 'user_contact') VALUES (?,?,?,?,?,?,?);";
+        $sql = "INSERT INTO users (username, password, firstname, lastname, address, user_contact) VALUES (?,?,?,?,?,?);";
 
         $stmt = mysqli_stmt_init($conn);
 
@@ -73,7 +73,7 @@ function createUser($conn, $username, $password, $usertype, $firstname, $lastnam
             return false;
             exit();
         }
-            mysqli_stmt_bind_param($stmt, "sssssss", $username, $password, $usertype, $firstname, $lastname, $address, $user_contact);
+            mysqli_stmt_bind_param($stmt, "ssssss", $username, $password, $firstname, $lastname, $address, $user_contact);
             mysqli_stmt_execute($stmt);
 
             mysqli_stmt_close($stmt);
@@ -81,14 +81,14 @@ function createUser($conn, $username, $password, $usertype, $firstname, $lastnam
            
 }
 
-function uidExists($conn, $username, $password, $firstname, $lastname, $address, $user_contact){
+function uidExists($conn, $username, $password){
             $err;
-            $sql="SELECT * FROM 'users' WHERE 'username' = ? AND 'password' = ? ;"; 
+            $sql = "SELECT * FROM users WHERE username = ? AND password = ? ;"; 
             $stmt = mysqli_stmt_init($conn);
 
             if (!mysql_stmt_prepare($stmt, $sql)){
-                header("location: customer.php?error=stmtfailed");
-                exit();
+                header("location: includes/login.php?error=stmtfailed");
+                exit(); 
             }
 
             mysqli_stmt_bind_param($stmt, "ss", $username, $password);
