@@ -102,7 +102,7 @@ include_once "core/functions.php";
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
 
-						<form action="registration.php" method="POST" >
+						<form action="login.php" method="POST" >
 							<?php
 								if(isset($_POST['signup'])){
 									include_once "core/db_conn.php";
