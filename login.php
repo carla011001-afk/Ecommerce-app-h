@@ -3,12 +3,6 @@
 include_once "core/db_conn.php";
 include_once "core/functions.php";
 
-if(createUser($conn, 'Shy', '1234', '3', 'Shymie', 'Relleve', 'Ligao City', '09097776565') !== false){
-	echo "User Added";
-}else{
-	echo "Failed";
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +29,8 @@ if(createUser($conn, 'Shy', '1234', '3', 'Shymie', 'Relleve', 'Ligao City', '090
 </head>
 
 <body>
+	
+	
 	<header id="header">
 		<div class="header_top">
 			<div class="container">
@@ -86,21 +82,16 @@ if(createUser($conn, 'Shy', '1234', '3', 'Shymie', 'Relleve', 'Ligao City', '090
 				<div class="col-sm-5">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<?php
-
-						if(isset($_GET['logged'])){
-							echo $_GETP['logged'];
-						}
-
-						?>
-						<form action="customer.php" method="POST">
-							<input type="text" placeholder="Username" />
-							<input type="password" placeholder="Password" />
+						
+						<form action="includes/login.php" method="POST">
+							
+							<input type="text" name="username" placeholder="Username" />
+							<input type="password" name="password" placeholder="Password" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>
-							<button type="submit" class="btn btn-default">Login</button></a>
+							<button type="submit" name= "login" value="login"class="btn btn-default">Login</button></a>
 						</form>
 					</div><!--/login form-->
 				</div>
@@ -111,16 +102,40 @@ if(createUser($conn, 'Shy', '1234', '3', 'Shymie', 'Relleve', 'Ligao City', '090
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
 
-						<form action="#" method="POST" >
+						<form action="registration.php" method="POST" >
+							<?php
+								if(isset($_POST['signup'])){
+									include_once "core/db_conn.php";
+									include_once "core/functions.php";
+
+									$username = htmlentities($_POST['username']);
+									$password = htmlentities($_POST['password']);
+									$firstname = htmlentities($_POST['firstname']);
+									$lastname = htmlentities($_POST['lastname']);
+									$address = htmlentities($_POST['address']);
+									$user_contact = htmlentities($_POST['contact']);
+
+
+
+									if(createUser($conn, $username, $password, $firstname, $lastname, $address, $user_contact) !== false){
+										echo "Successful! Account created!";
+
+									}  else{
+										echo "Failed!";
+									}
+
+									}
+							?>
+							
 							<input name="username" type="text" placeholder="Username"/>
 							<input name="password" type="password" placeholder="Password"/>
-							<input name="repeat_password" type="password" placeholder="Repeat Password"/>
+							
 							<hr>
 							<input name="firstname" autocomplete="off" required type="text" placeholder="Firstname"/>
 							<input name="lastname" autocomplete="off" required type="text" placeholder="Lastname"/>
 							<input name="address" required type="text" placeholder="Address"/>
 							<input name="contact" required type="text" placeholder="Contact"/>
-							<button type="submit" name="signup" class="btn btn-default">Signup</button>
+							<button type="submit" name="signup" class="btn btn-default" value="signup">Signup</button>
 
 						</form>
 						
