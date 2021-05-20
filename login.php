@@ -83,7 +83,7 @@ include_once "core/functions.php";
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
 						
-						<form action="includes/login.php" method="POST">
+						<form action="customer.php" method="POST">
 							<?php
 								if(isset($_POST['login'])){ 
 									include_once "core/db_conn.php";
