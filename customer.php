@@ -163,132 +163,43 @@ include_once "core/functions.php";
 						</div>
 				</div>
 
-				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						
+						
+						<?php 
+                         $items = getAll($conn, 'items');
+                         foreach($items as $item_key => $item){
+                             //this is to check for changes
+                        ?>
+						
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="images/hunter.jpeg" alt="" />
-											<h2>500</h2>
-											<p>LGA Designed Shirts</p>
+											<img src="images/<?php echo $item['item_img'];?>" alt="" />
+											<h2><?php echo $item['item_price'];?></h2>
+											<p><?php echo getCategory($conn, $item['item_id']) . " - " . $item['item_name'];?></p>
+											
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
+
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2>500</h2>
-												<p>LGA Designed Shirts</p>
+												<h2><?php echo "Php ". number_format($item['item_price'],2);?></h2>
+												<p><?php echo $item['item_name'];?></p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 										</div>
-								</div>
-								
+								</div>								
 							</div>
 						</div>
-
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/solido.jpeg" alt="" />
-										<h2>450</h2>
-										<p>LGA Designed Shirts</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>450</h2>
-											<p>LGA Designed Shirts</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/vaping.jpeg" alt="" />
-										<h2>500</h2>
-										<p>LGA Designed Shirts</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>500</h2>
-											<p>LGA Designed Shirts</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/F2.jpg" alt="" />
-										<h2>450</h2>
-										<p>Frat Shirts</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>450</h2>
-											<p>Frat Shirts</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
-									<img src="images/home/new.png" class="new" alt="" />
-								</div>
-								
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/F8.jpg" alt="" />
-										<h2>500</h2>
-										<p>Frat Shirts</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>500</h2>
-											<p>Frat Shirts</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
-									<img src="images/home/sale.png" class="new" alt="" />
-								</div>
-								
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/F7.jpg" alt="" />
-										<h2>500</h2>
-										<p>Frat Shirts</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>500</h2>
-											<p>Frat Shirts</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								
-								</div>
-							</div>
-						</div>
+						
+						<?php }
+                        ?>
+						
+				</div>
+				</div>
 						
 
 	</section>
