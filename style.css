@@ -1,4 +1,159 @@
 
+*{
+	margin: 0;
+	padding: 0;
+	
+
+}
+body{
+	background: #ddd;
+
+	
+	
+
+}
+.container{
+	width: 80%;
+	margin-bottom: 50px auto;
+	margin-left: 50px;
+
+	
+}
+.contact-box{
+	background: #008080;
+	display: flex;
+	margin-left: 70px;
+}
+.contact-left{
+	flex-basis: 60%;
+	padding: 40px 60px;
+}
+.contact-right{
+	flex-basis:50%;
+	padding: 40px;
+	background: #808080;
+	color: #fff;
+}
+h1{
+	margin-bottom: 80px;
+	text-align: center;
+	color: navy;
+	font-family: monospace;
+	font-size: 90px;
+
+}
+.container p{
+	margin-bottom: 40px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 20px;
+	font-family: monospace;
+	color: maroon;
+
+}
+.input-row{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.input-row .input-group{
+	flex-basis: 45%;
+}
+input{
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	outline: none;
+	padding-bottom: 5px;
+}
+textarea{
+	width: 100%;
+	border: 1px solid #ccc;
+	outline: none;
+	padding: 10px;
+	box-sizing: border-box;
+}
+label{
+	margin-bottom: 6px;
+	display: block;
+	color: #000;
+	font-weight: bolder;
+}
+button{
+	background: #1c00b5;
+	width: 100px;
+	border:none;
+	outline: none;
+	color: #fff;
+	height: 35px;
+	border-radius: 30px;
+	margin-top: 20px;
+	box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+}
+.contact-left h3{
+	color: #fff;
+	font-weight: 600;
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+.contact-right h3{
+	font-weight: 600;
+	margin-bottom: 30px;
+	font-size: 20px;
+
+}
+tr td: first-child{
+	padding-right: 20px;
+
+}
+tr td{
+	padding-top: 20px;
+	font-family: monospace;
+	color: #000;
+
+}
+.container{
+	max-width: 1170PX;
+	margin: auto;
+}
+.rows{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+
+
+}
+.footer{
+	
+	
+	padding: 70px 0;
+}
+.footer-col{
+	width: 25%;
+	padding: 0 15px;
+
+}
+.footer-col h4{
+	font-size: 20px;
+	color: #000;
+	text-transform: capitalize;
+	margin-bottom: 30px;
+	font-weight: 500;
+	font-family: fantasy;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom:-10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
 /* -------------  CSS Loader  ----------- */
 
 .overlay{
