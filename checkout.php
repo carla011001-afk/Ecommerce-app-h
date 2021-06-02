@@ -127,6 +127,7 @@
 					</thead>
 					<tbody>
 						<?php
+							$final = 0;
 							$sql = "SELECT a.ordertrack_num, b.item_name, b.item_price, a.order_quantity FROM `orders` a JOIN `items` b JOIN `users` c ON a.order_item_id = b.item_id AND a.order_cust_id = c.user_id AND a.order_cust_id = '$id';";
 							$query = mysqli_query($conn, $sql);
 
@@ -136,6 +137,7 @@
 								$price = $row['item_price'];
 								$qty = $row['order_quantity'];
 								$total = $price * $qty;
+								$final += $total;
 
 						?>
 						<tr>
@@ -157,6 +159,16 @@
 							}
 						?>
 					</tbody>
+					<thead>
+						<tr class="cart_menu">
+							<td></td>
+							<td></td>
+							<td class="name">Total:</td>
+							<td></td>
+							<td class="quantity">&#8369; <?php echo $final; ?>.00</td>
+							<td></td>
+						</tr>
+					</thead>
 				</table>
 			</div>
 		</div>

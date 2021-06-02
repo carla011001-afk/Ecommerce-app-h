@@ -122,7 +122,7 @@
 							<td class="price">Price</td>
 							<td class="quantity">Quantity</td>
 							<td class="total">Total</td>
-							<td class="options">Options</td>
+							<td class="options" colspan="2">Options</td>
 							<td></td>
 						</tr>
 					</thead>
@@ -131,7 +131,7 @@
 					<?php
 						include 'core/connect.php';
 
-						$sql = "SELECT a.item_id, b.item_name, b.item_desc, b.item_price, a.qty FROM `cart` a JOIN `items` b JOIN `users` c ON a.item_id = b.item_id AND a.user_id = c.user_id AND a.user_id = '$id'";
+						$sql = "SELECT a.cart_id, a.item_id, b.item_name, b.item_desc, b.item_price, a.qty FROM `cart` a JOIN `items` b JOIN `users` c ON a.item_id = b.item_id AND a.user_id = c.user_id AND a.user_id = '$id'";
 						$query = mysqli_query($conn, $sql);
 
 						while ($row = mysqli_fetch_array($query)) {
@@ -165,8 +165,9 @@
 							<?php echo "&#8369;" . $total . ".00"; ?>
 						</td>
 						<td>
-							
-							
+							<a href="delete.php?id=<?php echo $row['cart_id']; ?>">Delete</a>
+						</td>
+						<td>
 							<button type="submit" name="checkout" class="btn btn-default">Checkout</button>
 						</td>
 					</tr>
